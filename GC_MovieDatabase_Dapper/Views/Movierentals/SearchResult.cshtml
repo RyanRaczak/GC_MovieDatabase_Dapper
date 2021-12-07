@@ -1,0 +1,15 @@
+﻿
+@model IEnumerable<Movie>
+
+<h1>Search Results:</h1>
+<br />
+
+@foreach (var item in Model)
+{
+    <ul>
+        <li>@item.Title (@item.Year)</li>
+    </ul>
+}
+
+
+
