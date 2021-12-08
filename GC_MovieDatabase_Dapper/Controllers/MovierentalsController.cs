@@ -29,7 +29,7 @@ namespace GC_MovieDatabase_Dapper.Controllers
             {
                 using (var connect = new MySqlConnection(Secret.Connection))
                 {
-                    string sql = $"insert into movies values({0},'{movie.Title}','{movie.Category}',{movie.Year},{movie.Runtime})";
+                    string sql = $"insert into movies values({0},'{movie.Title}','{movie.Genre}',{movie.Year},{movie.Runtime})";
 
                     connect.Open();
 
@@ -82,42 +82,29 @@ namespace GC_MovieDatabase_Dapper.Controllers
         }
 
         [HttpPost]
-        public IActionResult SearchByTitle(String s)
+        public IActionResult SearchResult(Movie m)
         {
             List<Movie> movies = new List<Movie>();
+            string sql = "";
+            if (m.Title == null)
+            {
+                //Search Genre
+                sql = $"select * from movies where Genre = '{m.Genre}'";
+            }
+            else
+            {
+                //Search Title
+                sql = $"select * from movies where Title like '{m.Title}%'";
+            }
             using (var connect = new MySqlConnection(Secret.Connection))
             {
-                string sql = $"select * from movies where Title = '{s}'";
-
                 connect.Open();
 
                 movies = connect.Query<Movie>(sql).ToList();
 
                 connect.Close();
-                return RedirectToAction("SearchResult", movies);
+                return View(movies);
             }
-        }
-        [HttpPost]
-        public IActionResult SearchByGenre(String s)
-        {
-            List<Movie> movies = new List<Movie>();
-            using (var connect = new MySqlConnection(Secret.Connection))
-            {
-                string sql = $"select * from movies where Genre = '{s}'";
-
-                connect.Open();
-
-                movies = connect.Query<Movie>(sql).ToList();
-
-                connect.Close();
-               
-            }
-            return RedirectToAction("SearchResult", movies);
-        }
-
-        public IActionResult SearchResult(List<Movie>movies)
-        {
-            return View(movies);
         }
     }
 }

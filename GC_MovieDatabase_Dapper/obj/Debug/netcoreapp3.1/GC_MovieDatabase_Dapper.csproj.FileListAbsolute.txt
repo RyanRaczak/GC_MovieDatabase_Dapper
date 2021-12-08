@@ -43,3 +43,4 @@ C:\Users\RRaczak\source\repos\DevBuild\GC_MovieDatabase_Dapper\GC_MovieDatabase_
 C:\Users\RRaczak\source\repos\DevBuild\GC_MovieDatabase_Dapper\GC_MovieDatabase_Dapper\obj\Debug\netcoreapp3.1\Razor\Views\Movierentals\Result.cshtml.g.cs
 C:\Users\RRaczak\source\repos\DevBuild\GC_MovieDatabase_Dapper\GC_MovieDatabase_Dapper\obj\Debug\netcoreapp3.1\Razor\Views\Movierentals\Search.cshtml.g.cs
 C:\Users\RRaczak\source\repos\DevBuild\GC_MovieDatabase_Dapper\GC_MovieDatabase_Dapper\obj\Debug\netcoreapp3.1\Razor\Views\Movierentals\SearchResult.cshtml.g.cs
+C:\Users\RRaczak\source\repos\DevBuild\GC_MovieDatabase_Dapper\GC_MovieDatabase_Dapper\obj\Debug\netcoreapp3.1\GC_MovieDatabase_Dapper.csproj.AssemblyReference.cache

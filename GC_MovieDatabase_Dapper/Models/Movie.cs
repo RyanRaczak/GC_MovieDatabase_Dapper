@@ -17,7 +17,7 @@ namespace GC_MovieDatabase_Dapper.Models
         public string Title { get; set; }
 
         [Required]
-        public Genre Category { get; set; }
+        public Category Genre { get; set; }
 
         [Required]
         [Range(1880,2021, ErrorMessage ="Must be between year 1880 and 2021")]
@@ -27,7 +27,7 @@ namespace GC_MovieDatabase_Dapper.Models
         public int Runtime { get; set; }
 
     }
-    public enum Genre
+    public enum Category
     {
         Animation,
         Horror,
